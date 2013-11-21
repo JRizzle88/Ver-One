@@ -3,7 +3,6 @@ Verone::Application.routes.draw do
   resources :carts
   resources :list_items
   
-  get "store/index"
   resources :products
 
   root :to => "home#index"
