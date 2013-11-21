@@ -10,6 +10,6 @@ Verone::Application.routes.draw do
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
-
-  root to: 'store#index', as: 'store'
+  get "/store/index"
+  root :to => 'store#index', :as => 'store'
 end

@@ -1,8 +1,9 @@
 class LineItem < ActiveRecord::Base 
+  validates :product_id, presence: true
   belongs_to :product
   belongs_to :cart
   
   def total_price
-    product = product.price * quantity
+    product.price * quantity
   end
 end
