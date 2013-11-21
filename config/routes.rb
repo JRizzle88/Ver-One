@@ -1,6 +1,5 @@
 Verone::Application.routes.draw do
   resources :line_items
-
   resources :carts
   resources :list_items
   
