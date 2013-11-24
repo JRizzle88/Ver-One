@@ -1,17 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @post.title %></h3></a>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
 
 <p>
+  <strong>Image url:</strong>
   <%= @post.image_url %>
+</p>
+
 <p>
+  <strong>Content:</strong>
   <%= @post.content %>
 </p>
 
-<h5>Comments</h5>
+<h2>Comments</h2>
 <%= render @post.comments %>
 
-<h5>Add a comment:</h5>
+<h2>Add a comment:</h2>
 <%= render "comments/form" %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

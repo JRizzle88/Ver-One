@@ -1,19 +1,20 @@
 Verone::Application.routes.draw do
  
-##  namespace :admin do
-##     resources :posts do
-##       resources :comments
-##     end
-##  end
+namespace "admin" do
+  root :to => "admin#index"
+  resources :posts
+  resources :products
+end
+
 resources :posts do
   resources :comments
 end
 
+  resources :orders
+  resources :products
   resources :line_items
   resources :carts
   resources :list_items
-
-  resources :products
 
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

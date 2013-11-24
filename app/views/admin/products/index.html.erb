@@ -1,14 +1,5 @@
 <h1>Listing products</h1>
-<% @products.each do|product| %>
-  <h3><%= link_to product.title, product %></h3>
-  <div class="product-image">
-   <%= image_tag(product.image_url) %>
-  </div>
-  <div class="product-price">
-   <%= number_to_currency(product.price) %>
-  </div>
-<% end %>
-<!--
+
 <table>
   <thead>
     <tr>
@@ -36,5 +27,7 @@
     <% end %>
   </tbody>
 </table>
--->
+
 <br>
+
+<%= link_to 'New Product', new_product_path %>
