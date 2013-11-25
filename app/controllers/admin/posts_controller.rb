@@ -9,7 +9,6 @@ class Admin::PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /admin/posts
   def index
   @posts = Post.all
   end

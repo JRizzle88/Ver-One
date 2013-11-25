@@ -10,8 +10,7 @@ end
 end
 
 def create
- @post = Post.new(post_params)
-  
+ @post = Post.new(post_params) 
   respond_to do |format|
     if @post.save
       format.html  { redirect_to [:admin, @post],
@@ -28,7 +27,6 @@ def create
 
 def show
   @post = Post.find(params[:id])
- 
   respond_to do |format|
     format.html  # show.html.erb
     format.json  { render json: @post }
@@ -41,7 +39,6 @@ end
 
 def update
   @post = Post.find(params[:id])
- 
   respond_to do |format|
     if @post.update(post_params)
       format.html  { redirect_to [:admin, @post],

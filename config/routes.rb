@@ -10,12 +10,13 @@ namespace "admin" do |admin|
   root :to => "dashboard#index"
   resources :admin
   resources :posts
-  resources :products
+  resources :products, only: [:index, :show]
   resources :users
+  resources :orders
 end
 
   root :to => "home#index"
-
+  resources :users
   resources :posts
   resources :posts, only: [:index, :show] do
     resources :comments
