@@ -36,7 +36,7 @@ class Admin::ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to [:admin_products, @product], 
+        format.html { redirect_to [:admin_products, @products], 
           notice: 'Product was successfully created.' }
         format.json { render action: 'show', status: :created, 
           location: @product }
@@ -53,7 +53,7 @@ class Admin::ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to [:admin_products, @product], 
+        format.html { redirect_to [:admin_products, @products], 
           notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
@@ -69,7 +69,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to [:admin_products, @product] }
+      format.html { redirect_to [:admin_products, @products] }
       format.json { head :no_content }
     end
   end

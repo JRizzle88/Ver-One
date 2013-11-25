@@ -1,5 +1,7 @@
 <h1>Listing posts</h1>
-<% @posts.each do|post| %>
+
+<% @posts.each do |post| %>
+
   <h3><%= link_to post.title, post %></h3>
   <div class="blog-image">
    <%= image_tag(post.image_url) %>

@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20131124000123) do
   create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "comments", force: true do |t|

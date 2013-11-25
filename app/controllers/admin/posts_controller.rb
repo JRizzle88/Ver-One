@@ -29,10 +29,10 @@ class Admin::PostsController < ApplicationController
   
     respond_to do |format|
       if @post.save
-        format.html { redirect_to [:admin_posts, @post],
+        format.html { redirect_to [:admin_posts, @posts],
           notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, 
-          location: [:admin, @post] }
+          location: @post }
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors,
@@ -42,10 +42,9 @@ class Admin::PostsController < ApplicationController
   end
 
   def update
-    #@post = Post.find(params[:id]) 
     respond_to do |format|
       if @post.update(post_params)
-        format.html  { redirect_to [:admin_posts, @post],
+        format.html  { redirect_to [:admin_posts, @posts],
           notice: 'Post was successfully updated.' }
         format.json  { head :no_content }
       else
@@ -60,7 +59,7 @@ class Admin::PostsController < ApplicationController
     #@post = Post.find(params[:id])
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to [:admin_posts, @post] }
+      format.html { redirect_to [:admin_posts, @posts] }
       format.json { head :no_content }
     end
   end
@@ -72,7 +71,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def post_params
-     params.require(:title).permit(:title, :content, :image_url)
+     params.require(:post).permit(:title, :content, :image_url)
   end
 
 end
