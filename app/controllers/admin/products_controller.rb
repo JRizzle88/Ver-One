@@ -1,5 +1,11 @@
 class Admin::ProductsController < ApplicationController
+  
+  layout 'dashboard'
+
   before_filter :authenticate_user!
+  before_filter do 
+      redirect_to new_user_session_path unless current_user && current_user.admin?
+  end
   
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -30,7 +36,7 @@ class Admin::ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, 
+        format.html { redirect_to [:admin_products, @product], 
           notice: 'Product was successfully created.' }
         format.json { render action: 'show', status: :created, 
           location: @product }
@@ -47,7 +53,7 @@ class Admin::ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, 
+        format.html { redirect_to [:admin_products, @product], 
           notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
@@ -63,7 +69,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to [:admin_products, @product] }
       format.json { head :no_content }
     end
   end

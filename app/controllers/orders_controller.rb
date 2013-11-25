@@ -1,4 +1,4 @@
-class OrdersController < InheritedResources::Base
+class OrdersController < ApplicationController
 
 def index
     @orders = Order.paginate page: params[:page], order: 'created_at desc',
@@ -36,8 +36,8 @@ def create
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to(store_url, notice: 
-          'Thank you for your order.') }
+        format.html { redirect_to root_url, notice: 
+          'Thank you for your order.' }
         format.xml  { render xml: @order, status: :created,
           location: @order }
       else

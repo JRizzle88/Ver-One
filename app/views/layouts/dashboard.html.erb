@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Verone" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Verone" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div id="container" class="container">
+      <header>
+		<%= render 'layouts/dashboardnavigation' %>
+	  </header>
+	<div id="cart">
+		
+	</div>
+    <div id="main" role="main">
+    <div class="row">
+    <div class="large-12 columns">
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+	  <p class="alert"><%= alert %></p>
+    </div>
+      </div>
+	</div>
+      <footer>
+      </footer>
+    </div> <!--! end of #container -->
+  </body>
+</html>

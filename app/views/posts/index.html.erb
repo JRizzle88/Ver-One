@@ -2,7 +2,7 @@
 <% @posts.each do|post| %>
   <h3><%= link_to post.title, post %></h3>
   <div class="blog-image">
-   <%= post.image_url %>
+   <%= image_tag(post.image_url) %>
   </div>
   <div class="blog-content">
    <%= post.content %>

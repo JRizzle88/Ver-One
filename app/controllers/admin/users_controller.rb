@@ -1,4 +1,7 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
+
+  layout 'dashboard'
+  
   before_filter :authenticate_user!
   before_filter do 
     redirect_to new_user_session_path unless current_user && current_user.admin?

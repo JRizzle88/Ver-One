@@ -1,37 +1,37 @@
-class PostsController < InheritedResources::Base
+class PostsController < ApplicationController
 
 def index
   @posts = Post.all
  
   respond_to do |format|
   format.html  # index.html.erb
-  format.json  { render :json => @posts }
+  format.json  { render json: @posts }
 end
 end
 
 def create
-  @post = Post.new(params[:post].permit(:title, :content, :image_url))
+ @post = Post.new(post_params)
   
   respond_to do |format|
     if @post.save
-      format.html  { redirect_to(@post,
-                    :notice => 'Post was successfully created.') }
+      format.html  { redirect_to [:admin, @post],
+        notice: 'Post was successfully created.' }
       format.json  { render :json => @post,
-                    :status => :created, :location => @post }
+        status: :created, location: @post }
     else
-      format.html  { render :action => "new" }
-      format.json  { render :json => @post.errors,
-                    :status => :unprocessable_entity }
+     format.html  { render action: "new" }
+     format.json  { render json: @post.errors,
+        status: :unprocessable_entity }
     end
-  end
-end
+   end
+ end
 
 def show
   @post = Post.find(params[:id])
  
   respond_to do |format|
     format.html  # show.html.erb
-    format.json  { render :json => @post }
+    format.json  { render json: @post }
   end
 end
 
@@ -43,31 +43,35 @@ def update
   @post = Post.find(params[:id])
  
   respond_to do |format|
-    if @post.update(params[:post].permit(:title, :content, :image_url))
-      format.html  { redirect_to(@post,
-                    :notice => 'Post was successfully updated.') }
+    if @post.update(post_params)
+      format.html  { redirect_to [:admin, @post],
+                    :notice => 'Post was successfully updated.' }
       format.json  { head :no_content }
-    else
+   else
       format.html  { render :action => "edit" }
-      format.json  { render :json => @post.errors,
+     format.json  { render :json => @post.errors,
                     :status => :unprocessable_entity }
     end
   end
 end
 
 def destroy
-  @post = Post.find(params[:id])
+ @post = Post.find(params[:id])
   @post.destroy
  
   respond_to do |format|
-    format.html { redirect_to posts_url }
-    format.json { head :no_content }
+   format.html { redirect_to posts_url }
+   format.json { head :no_content }
   end
 end
 
-private
- def post_params
-     params.require(:title).permit(:image_url, :content)
- end
+  private
 
+    def set_post
+      @post = Post.find(params[:id])
+    end
+
+    def post_params
+      params.require(:post).permit(:title, :image_url, :content)
+    end
 end
