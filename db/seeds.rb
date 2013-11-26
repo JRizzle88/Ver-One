@@ -25,6 +25,7 @@ user.save!
 
 
 
+
 puts 'EXAMPLE PRODUCTS'
 Product.create(:title => 'One',
   :description => 
