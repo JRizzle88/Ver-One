@@ -12,7 +12,8 @@ class Admin::ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.paginate page: params[:page],
+      per_page: 10
   end
 
   # GET /products/1
@@ -34,7 +35,6 @@ class Admin::ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to [:admin_products, @products], 
@@ -68,7 +68,6 @@ class Admin::ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    #@product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
       format.html { redirect_to [:admin_products, @products] }

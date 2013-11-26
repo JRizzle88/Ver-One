@@ -33,7 +33,7 @@
 		    <li>
 		    <%= link_to 'Edit account', edit_user_registration_path %>
 		    </li>
-		    <% if current_user.has_role? :admin %>
+		    <% if can? :manage, :all %>		    
 		      <li>
 		      <%= link_to 'Admin', admin_dashboard_path %>
 		      </li>

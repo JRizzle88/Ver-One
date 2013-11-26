@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+before_action :set_order, only: [:show, :edit, :update, :destroy]
 
 def index
     @orders = Order.paginate page: params[:page], order: 'created_at desc',
@@ -8,6 +9,9 @@ def index
       format.html # index.html.erb
       format.xml  { render xml: @orders }
     end
+end
+
+def show
 end
 
 def new
@@ -49,5 +53,11 @@ def create
     end
 end
 
+
+  private
+
+    def set_order
+      @order = Order.find(params[:id])
+    end
 end
 

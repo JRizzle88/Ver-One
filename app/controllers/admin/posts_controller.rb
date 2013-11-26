@@ -10,14 +10,12 @@ class Admin::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-  @posts = Post.all
+    @posts = Post.paginate page: params[:page],
+      per_page: 10
+
   end
 
   def show
-    respond_to do |format|
-      format.html { redirect_to [:admin_posts, @posts] }
-      format.json { head :no_content }
-    end
   end
 
   def new
@@ -25,12 +23,10 @@ class Admin::PostsController < ApplicationController
   end
 
   def edit
-    #@post = Post.find(params[:id])
   end
 
   def create
     @post = Post.new(post_params)
-  
     respond_to do |format|
       if @post.save
         format.html { redirect_to [:admin_posts, @posts],
@@ -60,7 +56,6 @@ class Admin::PostsController < ApplicationController
   end
 
   def destroy
-    #@post = Post.find(params[:id])
     @post.destroy
     respond_to do |format|
       format.html { redirect_to [:admin_posts, @posts] }

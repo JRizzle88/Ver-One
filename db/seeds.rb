@@ -9,18 +9,18 @@
 # See http://railsapps.github.io/rails-environment-variables.html
 puts 'ROLES'
 YAML.load(ENV['ROLES']).each do |role|
-  roles = Role.create([{name: 'super_admin'}, {name: 'staff'}, {name:'customer'}])
+Role.create([{name: 'admin'}, {name: 'staff'}, {name: 'customer'}])
  # Role.find_or_create_by_name(role)
   puts 'role: ' << role
 end
 puts 'DEFAULT USERS'
-user = User.create([{email: 'admin@admin.com', name: 'super', password: 'admintest123', password_confirmation: 'admintest123'}])
+#user = User.create([{email: 'admin@admin.com', name: 'super', password: 'admintest123', password_confirmation: 'admintest123'}])
 # user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
-puts 'user: ' << user.name
-user.confirm!
-user.add_role :admin
+user = User.create! :name => 'admin', :email => 'test@test.com', :password => 'password', :password_confirmation => 'password'
+user.toggle!(:admin)
 
-Product.delete_all
+
+puts 'EXAMPLE PRODUCTS'
 Product.create(:title => 'One',
   :description => 
     %{<p>

@@ -22,9 +22,9 @@ end
   end
 
   get "/store/index"
-  resources :orders
   resources :products
   resources :line_items
+  resources :orders
   resources :carts
   resources :list_items  
   resources :stores, as: 'store'

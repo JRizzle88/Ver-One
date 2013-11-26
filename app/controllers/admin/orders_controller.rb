@@ -1,4 +1,5 @@
 class Admin::OrdersController < ApplicationController
+  before_action :set_order, only: [:show]
 
   layout 'dashboard'
 
@@ -27,7 +28,7 @@ def new
   @cart = current_cart
   @order_total = current_cart.total_price
     if @cart.line_items.empty?
-      redirect_to store_url, notice: "Your cart is empty"
+      redirect_to [:admin_orders, @orders], notice: "Your cart is empty"
       return
     end
     @order = Order.new
@@ -73,6 +74,11 @@ def update
     end
   end
 
+  private
+
+  def set_order
+    @order = Order.find(params[:id])
+  end
 
 end
 
