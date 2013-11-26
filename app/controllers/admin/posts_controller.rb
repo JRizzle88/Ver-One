@@ -16,6 +16,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def show
+    #@post filter
   end
 
   def new
