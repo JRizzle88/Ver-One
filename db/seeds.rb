@@ -8,10 +8,10 @@
 # Environment variables (ENV['...']) can be set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
 puts 'ROLES'
-YAML.load(ENV['ROLES']).each do |role|
-  Role.create([{name: 'admin'}, {name: 'staff'}, {name: 'customer'}])
- # Role.find_or_create_by_name(role)
-  puts 'role: ' << role
+YAML.load(ENV['ROLES']).each do |role| puts role
+ # Role.create([{name: 'admin'}, {name: 'staff'}, {name: 'customer'}])
+  Role.find_or_create_by_name({ :name => role }, :without_protection=> true)
+ # puts 'role: ' << role
 end
 puts 'DEFAULT USERS'
 #user = User.create([{email: 'admin@admin.com', name: 'super', password: 'admintest123', password_confirmation: 'admintest123'}])
