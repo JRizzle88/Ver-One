@@ -1,9 +1,12 @@
 Verone::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { :host => 'verone.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'verone.herokuapp.com' }
+  
+  config.time_zone = "Central Time (US & Canada)"
   # Code is not reloaded between requests.
-  config.cache_classes = true
+  #config.cache_classes = true
 
+  config.whiny_nils = true
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
   # and those relying on copy on write to perform better.
@@ -52,7 +55,7 @@ Verone::Application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -63,14 +66,14 @@ Verone::Application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
-  config.active_support.deprecation = :notify
+  config.active_support.deprecation = :log
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
