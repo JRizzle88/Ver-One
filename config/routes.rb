@@ -17,7 +17,7 @@ end
 
   root :to => "home#index"
   resources :posts
-  resources :posts, only: [:index, :show] do
+  resources :posts do
     resources :comments
   end
 

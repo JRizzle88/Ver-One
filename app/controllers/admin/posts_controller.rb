@@ -14,6 +14,10 @@ class Admin::PostsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html { redirect_to [:admin_posts, @posts] }
+      format.json { head :no_content }
+    end
   end
 
   def new

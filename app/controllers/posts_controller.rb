@@ -35,7 +35,7 @@ def update
   @post = Post.find(params[:id])
   respond_to do |format|
     if @post.update(post_params)
-      format.html  { redirect_to [:admin, @post],
+      format.html  { redirect_to [:admin_posts, @posts],
                     :notice => 'Post was successfully updated.' }
       format.json  { head :no_content }
    else
@@ -47,11 +47,10 @@ def update
 end
 
 def destroy
- @post = Post.find(params[:id])
+  @post = Post.find(params[:id])
   @post.destroy
- 
   respond_to do |format|
-   format.html { redirect_to [:admin, @post] }
+   format.html { redirect_to [:admin_posts, @posts] }
    format.json { head :no_content }
   end
 end

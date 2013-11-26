@@ -18,6 +18,7 @@ class Admin::ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    redirect_to [:admin_products, @product]
   end
 
   # GET /products/new
@@ -41,7 +42,7 @@ class Admin::ProductsController < ApplicationController
         format.json { render action: 'show', status: :created, 
           location: @product }
       else
-        format.html { render action: 'new' }
+        format.html { render action: "new" }
         format.json { render json: @product.errors, 
           status: :unprocessable_entity }
       end
@@ -53,12 +54,12 @@ class Admin::ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to [:admin_products, @products], 
+        format.html  { redirect_to [:admin_products, @products], 
           notice: 'Product was successfully updated.' }
-        format.json { head :no_content }
+        format.json  { head :no_content }
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @product.errors, 
+        format.html  { render action: "edit" }
+        format.json  { render json: @product.errors, 
           status: :unprocessable_entity }
       end
     end
@@ -67,6 +68,7 @@ class Admin::ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    #@product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
       format.html { redirect_to [:admin_products, @products] }
