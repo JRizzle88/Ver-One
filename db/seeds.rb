@@ -22,6 +22,8 @@ user.add_role :admin
 user.save!
 
 
+
+
 puts 'EXAMPLE PRODUCTS'
 Product.create(:title => 'One',
   :description => 
