@@ -8,6 +8,6 @@
 # Add application configuration variables here, as shown below.
 #
 ADMIN_NAME: admin
-ADMIN_EMAIL: admin@admin.com
-ADMIN_PASSWORD: admin
+ADMIN_EMAIL: admin@verone.com
+ADMIN_PASSWORD: verone123
 ROLES: [admin, user, VIP]
