@@ -10,6 +10,17 @@ header{background-color: #444444;}
 .large-4.small-6.columns{padding-left: 15px; padding-right: 19px;}
 .clearfix:after { content: "\00A0"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;width:0;font-size: 0px}.clearfix{ display: inline-block;}html[xmlns] .clearfix { display: block;}* html .clearfix{ height: 1%;}.clearfix {display: block}
 .small-4 img{width: 225px;}
+.middle{margin-left: auto; marigin-right: auto; display: block;}
+.custom-th, .custom-th-blog{padding: 0px;}
+.th.custom-th img{max-width: 90px;}
+.th.custom-th-blog img{max-width: 400px;}
+
+
+
+
+
+
+
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.

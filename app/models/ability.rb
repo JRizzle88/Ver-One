@@ -11,7 +11,7 @@ class Ability
     else
       can :read, :all
     end
-    end
+  end
 end
     #elsif user.product_admin?
     #  can :manage, [Product, Asset, Issue]

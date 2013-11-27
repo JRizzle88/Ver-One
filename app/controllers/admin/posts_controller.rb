@@ -11,8 +11,8 @@ class Admin::PostsController < ApplicationController
 
   def index
     @posts = Post.all.paginate page: params[:page],
-      per_page: 10
-
+      per_page: 10,
+      :order => 'updated_at DESC'
   end
 
   def show

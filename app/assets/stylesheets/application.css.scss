@@ -12,6 +12,8 @@
  *= require foundation_and_overrides
  *= require_tree .
 */
+@import "foundation/variables";
+
 .brand {
   float: left;
   padding-right: 8px;

@@ -26,4 +26,9 @@ class Product < ActiveRecord::Base
       return false
     end
   end
+
+  def Product.random
+    self.limit(1).offset(rand(self.count)).first 
+  end
+
 end

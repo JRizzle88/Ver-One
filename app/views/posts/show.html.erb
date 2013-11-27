@@ -1,23 +1,58 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+<div class="row">
+ 
+    <!-- Main Blog Content -->
+    <div class="large-9 columns" role="content">
+ 
+      <article>
+		<p>
+  		<h3>
+  			<%= @post.title %>
+  		</h3>
+  		<p>Posted on <%= @post.created_at %></p>
+		</p>
 
-<p>
-  <h3>
-  <%= @post.title %>
-  </h3>
-</p>
+		<p>
+  			<%= image_tag(@post.image_url) %>
+		</p>
 
-<p>
-  <%= image_tag(@post.image_url) %>
-</p>
+		<p>
+  			<%= @post.content %>
+		</p>
 
-<p>
-  <%= @post.content %>
-</p>
+		<h3>Comments</h3>
+			<%= render @post.comments %>
 
-<h3>Comments</h3>
-<%= render @post.comments %>
+		<h6>Add a comment:</h6>
+			<%= render "comments/form" %>
+		</article>
 
-<h6>Add a comment:</h6>
-<%= render "comments/form" %>
+	</div>
+	<aside class="large-3 columns">
+ 
+      <h5>Categories</h5>
+      <ul class="side-nav">
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li><a href="#">Four</a></li>
+        <li><a href="#">Five</a></li>
+      </ul>
+ 
+      <div class="panel">
+        <h5>Featured Posts</h5>
+        <% @posts.each do |post| %>
+          <h5><%= link_to post.title, post %></h5>
+        <% end %>
+      </div>
+ 
+    </aside>
+</div>
 
-<%= link_to 'Back', posts_path %>
+
+
+
+
+<%= render 'layouts/footer' %>

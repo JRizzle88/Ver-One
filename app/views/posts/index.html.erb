@@ -13,7 +13,8 @@
 <p><%= will_paginate @posts %></p> -->
 
 <!-- Main Page Content and Sidebar -->
- 
+  <br>
+  <br>
   <div class="row">
  
     <!-- Main Blog Content -->
@@ -21,18 +22,17 @@
  
       <article>
         <% @posts.each do |post| %>
-          <h3><%= link_to post.title, post %></h3>
-          <p>Posted <%= post.created_at %></p>
           <div class="row">
             <div class="large-12 columns">
-              <img src="http://placehold.it/400x240&text=[img]" />
+              <%= image_tag(post.image_url) %>
+              <h3><%= link_to post.title, post %></h3>
             </div>
           </div>
           <p><%= post.content %></p>
         <% end %>
       </article>
       <hr />
-      <%= will_paginate @posts %>
+      <%= will_paginate @posts, :class => 'pagination-centered' %>
     </div>
  
     <!-- End Main Content -->

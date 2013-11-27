@@ -21,7 +21,8 @@
     <%= f.input :address %>
     <%= f.input :email %>
     <%= f.select :pay_type, Order::PAYMENT_TYPES,
-                  prompt: 'Select a payment method' %>
+                  prompt: 'Select a payment method',
+                  :class => 'select_box' %>
   </div>
 
   <div class="form-actions">

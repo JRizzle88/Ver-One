@@ -3,12 +3,11 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Price</th>
       <th></th>
-      <th></th>
+      <th width="200">Product Title</th>
+      <th width="275">Description</th>
+      <th>Product Image</th>
+      <th>Product Price</th>
       <th></th>
     </tr>
   </thead>
@@ -16,13 +15,12 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.title %></td>
+        <td><%= link_to 'Preview', product, :class => 'button [ tiny success ]' %></td>
+        <td><%= link_to product.title, edit_admin_product_path(product) %></td>
         <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
+        <td class="th custom-th"><%= image_tag(product.image_url) %></td>
         <td><%= number_to_currency(product.price) %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +29,4 @@
 <br>
 
 <%= link_to 'New Product', new_admin_product_path %>
-<p><%= will_paginate @products %></p>
+<p><%= will_paginate @products, :class => 'pagination-centered' %></p>

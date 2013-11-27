@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @posts = Post.all.paginate page: params[:page],
+      per_page: 6
   end
 
   def new

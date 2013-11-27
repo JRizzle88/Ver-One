@@ -3,10 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Image url</th>
       <th></th>
+      <th width="200">Title</th>
+      <th width="275">Image url</th>
       <th></th>
       <th></th>
     </tr>
@@ -15,12 +14,11 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.image_url %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Preview', post, :class => 'button [ tiny success ]' %></td>
+        <td><%= link_to post.title, edit_admin_post_path(post) %></td>
+        <td class="th custom-th-blog"><%= image_tag(post.image_url) %></td>
+        <td><%= post.updated_at %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +27,4 @@
 <br>
 
 <%= link_to 'New Post', new_admin_post_path %>
-<p><%= will_paginate @posts %></p>
+<p><%= will_paginate @posts, :class => 'pagination-centered' %></p>
