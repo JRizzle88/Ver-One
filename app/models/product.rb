@@ -15,7 +15,6 @@ class Product < ActiveRecord::Base
   }
   validates :title, length: {minimum: 10}
   
-  default_scope { order('external_updated_at') }
   
   before_destroy :ensure_not_referenced_by_any_line_item
 
