@@ -2,21 +2,152 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Products</h1>
 
-<% @products.each do |product| %>
+
+<!-- <% @products.each do |product| %>
 
   <div class="entry">
     <%= image_tag(product.image_url) %>
     <h3><%= link_to product.title, product %></h3>
-    <%= sanitize(product.description) %>
     <div class="price_line">
       <span class="price"><%= number_to_currency(product.price) %></span>
-    <%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
+      <p></p>
+      <%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
     </div>
   </div>
 
-<% end %>
+<% end %> -->
 
 <br>
-<p><%= will_paginate @products %></p>
+
+ <div class="row">
+ 	
+  <!-- Side Bar -->
+ 
+        <div class="small-3 columns">
+          <div class="hide-for-small panel">
+            <h3>Sidebar</h3>
+            <h5 class="subheader">Categories</h5>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+           		.<br>
+
+
+          </div>
+ 
+          <a href="#">
+          <div class="panel callout radius">
+            <h6>99  items in your cart</h6>
+          </div>
+        </div>
+ 		
+    <!-- End Side Bar -->
+ 
+ 	<!-- Side Bar 2 -->
+ 
+        <div class="small-3 columns">
+          <div class="hide-for-small panel">
+            <h3>Sidebar</h3>
+            <h5 class="subheader">Feature Product</h5>
+           		<% @products.each_slice(1) do |slice2| %>
+           			<% slice2.each do |product| %> 
+           		      <%= image_tag(product.image_url) %> 
+           		      <h5><%= link_to product.title, product %></h5>
+           		      <p><%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
+                      </p>
+                    <% end %>
+                <% end %>
+          </div>
+ 
+          <a href="#">
+          <div class="panel callout radius">
+            <h6>99  items in your cart</h6>
+          </div>
+        </div>
+ 		
+    <!-- End Side Bar 2 -->
+ 
+    <!-- Thumbnails -->
+ 
+        <div class="small-9 columns">
+          <% @products.each_slice(3) do |slice| %>
+          <div class="row">
+ 			<% slice.each do |product| %>
+            <div class="small-4 columns">
+             <%= image_tag(product.image_url) %>
+              <div class="panel">
+                <h5><%= link_to product.title, product %></h5>
+                <h6 class="subheader"><%= number_to_currency(product.price) %></h6>
+                <p><%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
+                </p>
+              </div>	
+            </div>
+            <% end %>
+          </div> 
+          <% end %>
+        </div>
+            
+ 
+ 
+    <!-- End Thumbnails -->
+ 			<p><%= will_paginate @products %></p>
+ 
+    <!-- Managed By -->
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel">
+                <div class="row">
+ 
+                  <div class="large-2 small-6 columns">
+                    <img src="http://placehold.it/300x300&text=Site Owner">
+                  </div>
+ 
+                  <div class="large-10 small-6 columns">
+                    <strong> </strong>                   
+                  </div>
+ 
+                </div>
+              </div>
+            </div>
+    <!-- End Managed By -->
+          </div>
+        
+      
+ 
+ 
+    <!-- Footer -->
+ 
+      <footer class="row">
+        <div class="large-12 columns"><hr />
+          <div class="row">
+ 
+            <div class="large-6 columns">
+              <p>© Copyright no one at all. Go to town.</p>
+            </div>
+ 
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </div>
+ 
+          </div>
+        </div>
+      </footer>
+ 
+    <!-- End Footer -->
+
+
+  

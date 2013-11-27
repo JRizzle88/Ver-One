@@ -32,10 +32,10 @@ class Admin::PostsController < ApplicationController
       if @post.save
         format.html { redirect_to [:admin_posts, @posts],
           notice: 'Post was successfully created.' }
-        format.json { render action: 'show', status: :created, 
-          location: @post }
+        format.json { render action: 'show', 
+          status: :created, location: @post }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @post.errors,
           status: :unprocessable_entity }
       end
@@ -49,7 +49,7 @@ class Admin::PostsController < ApplicationController
           notice: 'Post was successfully updated.' }
         format.json  { head :no_content }
       else
-        format.html  { render action: "edit" }
+        format.html  { render action: 'edit' }
         format.json  { render json: @post.errors,
           status: :unprocessable_entity }
       end

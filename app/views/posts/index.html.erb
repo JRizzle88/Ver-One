@@ -1,4 +1,4 @@
-<h1>Listing posts</h1>
+<!-- <h1>Listing posts</h1>
 
 <% @posts.each do |post| %>
 
@@ -10,26 +10,79 @@
    <%= post.content %>
   </div>
 <% end %>
-<p><%= will_paginate @posts %></p>
-<!-- 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Image url</th>
-    </tr>
-  </thead>
+<p><%= will_paginate @posts %></p> -->
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.image_url %></td>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
---> 
+<!-- Main Page Content and Sidebar -->
+ 
+  <div class="row">
+ 
+    <!-- Main Blog Content -->
+    <div class="large-9 columns" role="content">
+ 
+      <article>
+        <% @posts.each do |post| %>
+          <h3><%= link_to post.title, post %></h3>
+          <p>Posted <%= post.created_at %></p>
+          <div class="row">
+            <div class="large-12 columns">
+              <img src="http://placehold.it/400x240&text=[img]" />
+            </div>
+          </div>
+          <p><%= post.content %></p>
+        <% end %>
+      </article>
+      <hr />
+      <%= will_paginate @posts %>
+    </div>
+ 
+    <!-- End Main Content -->
+ 
+ 
+    <!-- Sidebar -->
+ 
+    <aside class="large-3 columns">
+ 
+      <h5>Categories</h5>
+      <ul class="side-nav">
+        <li><a href="#">News</a></li>
+        <li><a href="#">Code</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Fun</a></li>
+        <li><a href="#">Weasels</a></li>
+      </ul>
+ 
+      <div class="panel">
+        <h5>Featured Posts</h5>
+        <% @posts.each do |post| %>
+          <h5><%= link_to post.title, post %></h5>
+        <% end %>
+      </div>
+ 
+    </aside>
+ 
+    <!-- End Sidebar -->
+  </div>
+ 
+  <!-- End Main Content and Sidebar -->
+ 
+ 
+  <!-- Footer -->
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>

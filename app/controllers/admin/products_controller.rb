@@ -19,7 +19,7 @@ class Admin::ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    redirect_to [:admin_products, @product]
+  
   end
 
   # GET /products/new
@@ -39,10 +39,10 @@ class Admin::ProductsController < ApplicationController
       if @product.save
         format.html { redirect_to [:admin_products, @products], 
           notice: 'Product was successfully created.' }
-        format.json { render action: 'show', status: :created, 
-          location: @product }
+        format.json { render action: 'show', 
+          status: :created, location: @product }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @product.errors, 
           status: :unprocessable_entity }
       end
@@ -58,7 +58,7 @@ class Admin::ProductsController < ApplicationController
           notice: 'Product was successfully updated.' }
         format.json  { head :no_content }
       else
-        format.html  { render action: "edit" }
+        format.html  { render action: 'edit' }
         format.json  { render json: @product.errors, 
           status: :unprocessable_entity }
       end
