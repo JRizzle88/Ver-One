@@ -10,7 +10,7 @@ class Admin::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.paginate page: params[:page],
+    @posts = Post.all.paginate page: params[:page],
       per_page: 10
 
   end
