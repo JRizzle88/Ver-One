@@ -1,5 +1,9 @@
 <h2>Add a New Product</h2>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= link_to 'Back to Posts List', admin_products_path %>  
+<hr>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', products_path %>
+<%= tinymce %>

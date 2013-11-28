@@ -1,5 +1,5 @@
 <div class="row">
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for [:admin, @post] do |f| %>
   <div class="form-inputs">
     <div class="large-9 columns">
       <%= f.input :title, placeholder: 'Post Title' %>

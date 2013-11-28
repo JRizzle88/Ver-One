@@ -1,11 +1,11 @@
 <h1>Posts</h1>
-
+<%= link_to 'New Post', new_admin_post_path, :class => 'button [ tiny small large ]' %>
 <table>
   <thead>
     <tr>
       <th></th>
-      <th width="200">Title</th>
-      <th width="275">Image url</th>
+      <th width="400">Title</th>
+      <th width="225">Image url</th>
       <th></th>
       <th></th>
     </tr>
@@ -23,8 +23,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_admin_post_path %>
 <p><%= will_paginate @posts, :class => 'pagination-centered' %></p>

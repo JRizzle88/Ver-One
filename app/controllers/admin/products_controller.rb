@@ -54,8 +54,8 @@ class Admin::ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html  { redirect_to [:admin_products, @products], 
-          notice: 'Product was successfully updated.' }
+        format.html  { redirect_to edit_admin_product_path(@product), 
+          notice: 'Successfully Updated.', class: 'alert-box success radius' }
         format.json  { head :no_content }
       else
         format.html  { render action: 'edit' }
