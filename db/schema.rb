@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131124000123) do
+ActiveRecord::Schema.define(version: 20131129085844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131124000123) do
   create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "comments", force: true do |t|
@@ -49,10 +50,27 @@ ActiveRecord::Schema.define(version: 20131124000123) do
     t.datetime "updated_at"
   end
 
+  create_table "post_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_posts_file_name"
+    t.string   "image_posts_content_type"
+    t.integer  "image_posts_file_size"
+    t.datetime "image_posts_updated_at"
+    t.integer  "category_id"
+  end
+
+  create_table "product_categories", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,9 +79,14 @@ ActiveRecord::Schema.define(version: 20131124000123) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.decimal  "price",               precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "product_category_id"
   end
 
   create_table "roles", force: true do |t|

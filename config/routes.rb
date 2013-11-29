@@ -1,5 +1,9 @@
 Verone::Application.routes.draw do
 
+  resources :post_categories
+
+  resources :product_categories
+
   devise_for :users, :controllers => {:registrations => "registrations"}
   devise_for :admins
 
@@ -13,10 +17,11 @@ namespace "admin" do |admin|
   resources :products
   resources :users
   resources :orders
+  resources :post_categories
+  resources :product_categories
 end
 
   root :to => "home#index"
-  resources :posts
   resources :posts do
     resources :comments
   end

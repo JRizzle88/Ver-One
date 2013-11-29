@@ -18,6 +18,8 @@
   <%= number_to_currency(@product.price) %>
 </p>
 
+<h6><%= @product.product_category_id %></h6>
+
 <%= link_to 'Back', products_path %>
 <%= button_to 'Add to Cart', line_items_path(:product_id => @product) %>
 

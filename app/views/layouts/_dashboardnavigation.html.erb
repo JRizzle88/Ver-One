@@ -1,28 +1,33 @@
-<div class="row fullwidth">
+<!-- 
+	Admin Dashboard Top Navigation
+   partial: _dashboardnavigation.html.erb 
+==========================================
+-->
+
+<div class="fullwidth">
 <%= link_to "Verone", root_path, :class => 'brand' %>
 
-<nav class="dashboard_top-bar">
+<nav class="top-bar">
   <ul class="title-area">
     <!-- Title Area -->
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
   </ul>
 
-  <section class="dashboard_top-bar-section">
+  <section class="top-bar-section">
     <!-- Left Nav Section -->
     <ul class="left">
       <li><a href="/admin/dashboard">Home</a></li>
       <li><a href="/admin/posts">Posts</a></li>
-	  <li><a href="/admin/products">Products</a>
-	  	<ul>
-	  		<li><a href="/admin/products/new">View Products</a></li>
-	  		<li><a href="/admin/products/new">Add New Products</a></li>
+	  <li class="has-dropdown"><a href="/admin/products">Products</a>
+	  	<ul class="dropdown">
+	  		<li><a href="/admin/products/new">Add New Product</a></li>
 	  		<li><a href="/admin/products/new">Delete Products</a></li>
 	  	</ul>
 	  </li>
 	  <li><a href="/admin/orders">Orders</a></li>
-	  <li><a href="/admin/users">Users</a>
-	  	<ul>
-	  		<li><a href="/products/new">Add New Orders</a></li>
+	  <li class="has-dropdown"><a href="/admin/users">Users</a>
+	  	<ul class="dropdown">
+	  		<li><a href="/products/new">Add New User</a></li>
 	  	</ul>
 	  </li>
     </ul>

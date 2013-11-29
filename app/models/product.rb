@@ -2,7 +2,18 @@ class Product < ActiveRecord::Base
   resourcify
   has_many :line_items
   has_many :orders, :through => :line_items
+  has_many :image_products
+  has_many :product_categories
+  
 
+#product image // paperclip
+  has_attached_file :image,
+    :styles => { :product_page => "550x550>", :product_image => "220x220>", :product_thumb => "75x75>" },
+    :path => ":rails_root/assets/images/products/:style/:basename.:extension"
+
+
+
+#product validations
   validates :title, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
@@ -27,5 +38,4 @@ class Product < ActiveRecord::Base
   def Product.random
     self.limit(1).offset(rand(self.count)).first 
   end
-
 end

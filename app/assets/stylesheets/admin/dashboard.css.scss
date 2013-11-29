@@ -2,63 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.side-nav { 
+  width: 12.5%;
+  background-color: #1382CA;
+  box-shadow: inset #3B3E40 -1px 0px 2px;
+}
 
-.dashboard_top-bar-section ul.left { margin-left: 100px !important;}
-.dashboard_top-bar-section .dashboard_top-bar ul a{background-color: #444444 !important;}
-.dashboard_top-bar-section ul {
-  text-align: left;
-  display: inline;
-  margin: 0;
-  list-style: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+.side-nav li { 
+  list-style-type:none;
 }
-.dashboard_top-bar-section ul li {
-  font: bold 12px/18px sans-serif;
-  display: inline-block;
-  margin-right: -4px;
-  position: relative;
-  padding: 15px 20px;
-  background: #fff;
-  cursor: pointer;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
+.side-nav li a { 
+  font-size: 17px; 
+  font-weight: 600;
+  color: white; 
+  margin-left: 0;
 }
-.dashboard_top-bar-section ul li:hover {
-  background: #555;
-  color: #fff;
+.side-nav li a.group-header {
+  background-color: #3B3E40;
+  padding: 5px 0px 5px 0px;
+  padding-left: 21%;
+  border-bottom: 1px solid white;
 }
-.dashboard_top-bar-section ul li ul {
-  padding: 0;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 150px;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transiton: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  -transition: opacity 0.2s;
+.side-nav ul.dropdown{
+  padding: 13px 0px 5px 0px; 
+  margin-left: 0px;
 }
-.dashboard_top-bar-section ul li ul li { 
-  background: #555; 
-  display: block; 
-  color: #fff;
-  text-shadow: 0 -1px 0 #000;
+.side-nav ul li{
+  margin-bottom:0px;
 }
-.dashboard_top-bar-section ul li ul li:hover { background: #666; }
-.dashboard_top-bar-section ul li:hover ul {
-  display: block;
-  opacity: 1;
-  visibility: visible;
+.side-nav ul li a { 
+  font-size: 12px; 
+  font-weight: 600;
+  text-shadow: 0px 1px 1px grey; 
+  transition: color 0.1s ease;
+  padding-left: 23%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
+.side-nav ul li a:hover { 
+  background-color: #1173b3;
+  color: #e8f3ff;
+}
+

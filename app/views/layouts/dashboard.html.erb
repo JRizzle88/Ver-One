@@ -7,8 +7,13 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+     <!--[if IE]>
+     <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+   <![endif]-->
+   <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name %> <%= action_name %>" style="background-color: #F5F5F5;">
     <div id="container" class="container">
       <header>
 		<%= render 'layouts/dashboardnavigation' %>
@@ -17,7 +22,8 @@
 		
 	</div>
     <div id="main" role="main">
-    <div class="row">
+    <%= render 'layouts/dashboard_leftnavigation' %>
+    <div class="rowfull">
     <div class="large-12 columns">
       <%= yield %>
     </div>

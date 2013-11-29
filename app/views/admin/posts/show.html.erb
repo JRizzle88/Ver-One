@@ -4,6 +4,11 @@
   <h3>
   <%= @post.title %>
   </h3>
+ <% if @post.image_posts? %>
+  <%= image_tag(@post.image_posts.url) %>
+ <% else %>
+  No Attachment Available!
+ <% end %>
 </p>
 
 <p>
