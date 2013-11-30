@@ -5,7 +5,7 @@ Verone::Application.routes.draw do
 
 get '/token' => 'home#token', as: :token
 
-namespace "admin" do |admin|
+namespace :admin do
   get 'dashboard' => 'dashboard#index'
   root :to => "dashboard#index"
   resources :admin
