@@ -5,8 +5,9 @@ class Post < ActiveRecord::Base
 
 #post image // paperclip
   has_attached_file :image_posts,
-    :styles => { :post_page => "550x550>", :post_image => "220x220>", :post_thumb => "75x75>" }
-    #:path => ":rails_root/assets/images/posts/:style/:basename.:extension"
+    :styles => { :post_page => "550x550>", :post_image => "220x220>", :post_thumb => "75x75>",
+    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename" }
 
 #post validations
   validates :title, presence: true

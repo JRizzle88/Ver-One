@@ -8,8 +8,9 @@ class Product < ActiveRecord::Base
 
 #product image // paperclip
   has_attached_file :image,
-    :styles => { :product_page => "550x550>", :product_image => "220x220>", :product_thumb => "75x75>" },
-    :path => ":rails_root/assets/images/products/:style/:basename.:extension"
+    :styles => { :product_page => "550x550>", :product_image => "220x220>", :product_thumb => "75x75>",
+    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename" }
 
 
 
