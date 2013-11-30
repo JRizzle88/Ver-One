@@ -1,9 +1,5 @@
 Verone::Application.routes.draw do
 
-  resources :post_categories
-
-  resources :product_categories
-
   devise_for :users, :controllers => {:registrations => "registrations"}
   devise_for :admins
 
@@ -31,6 +27,8 @@ end
   resources :line_items
   resources :orders
   resources :carts
+  resources :post_categories
+  resources :product_categories
   resources :list_items  
   resources :stores, as: 'store'
   

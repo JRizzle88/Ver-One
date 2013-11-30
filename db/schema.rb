@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20131129085844) do
     t.string   "image_posts_content_type"
     t.integer  "image_posts_file_size"
     t.datetime "image_posts_updated_at"
-    t.integer  "category_id"
+    t.integer  "post_category_id"
   end
 
   create_table "product_categories", force: true do |t|

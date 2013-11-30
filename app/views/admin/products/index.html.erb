@@ -6,6 +6,7 @@
       <th></th>
       <th width="200">Product Title</th>
       <th width="275">Description</th>
+      <th width="150">Category</th>
       <th>Product Image</th>
       <th>Product Price</th>
       <th></th>
@@ -17,7 +18,8 @@
       <tr>
         <td><%= link_to 'Preview', product, :class => 'button [ tiny success ]' %></td>
         <td><%= link_to product.title, edit_admin_product_path(product) %></td>
-        <td><%= product.description %></td>
+        <td><%= product.description %></td>      
+        <td><%= product.product_category_id %></td>
         <td class="th custom-th"><%= image_tag(product.image_url) %></td>
         <td><%= number_to_currency(product.price) %></td>
         <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %></td>

@@ -13,7 +13,8 @@ class Admin::ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all.paginate page: params[:page],
-      per_page: 10
+      per_page: 10,
+      :order => 'updated_at DESC'
   end
 
   # GET /products/1

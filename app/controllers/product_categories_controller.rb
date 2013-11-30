@@ -6,14 +6,12 @@ class ProductCategoriesController < ApplicationController
   def index
     @product_categories = ProductCategory.all.paginate page: params[:page],
       per_page: 10
-
-    
   end
 
   # GET /product_categories/1
   # GET /product_categories/1.json
   def show
-    @product_category = ProductCategory.find(params[:id])
+    
   end
 
   # GET /product_categories/new

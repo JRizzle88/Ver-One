@@ -1,12 +1,5 @@
-class Admin::PostCategoriesController < ApplicationController
+class PostCategoriesController < ApplicationController
   before_action :set_post_category, only: [:show, :edit, :update, :destroy]
-
-  layout 'dashboard'
-
-  before_filter :authenticate_user!
-  before_filter do 
-      redirect_to new_user_session_path unless current_user && current_user.admin?
-  end
   
   # GET /post_categories
   # GET /post_categories.json
@@ -38,12 +31,12 @@ class Admin::PostCategoriesController < ApplicationController
     respond_to do |format|
       if @post_category.save
         format.html { redirect_to [:admin_post_categories, @post_categories], 
-          notice: 'Category successfully added' }
+          notice: 'Post Category Added' }
         format.json { render action: 'show', 
           status: :created, location: @post_category }
       else
         format.html { redirect_to [:admin_post_categories, @post_categories],
-          alert: 'Category already exists.' }
+          alert: 'Post Category already exists.' }
         format.json { render json: @post_category.errors, 
           status: :unprocessable_entity }
       end
@@ -56,7 +49,7 @@ class Admin::PostCategoriesController < ApplicationController
     respond_to do |format|
       if @post_category.update(post_category_params)
         format.html { redirect_to [:admin_post_categories, @post_categories], 
-          notice: 'Category successfully updated.' }
+          notice: 'Post Category Updated' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,8 +64,7 @@ class Admin::PostCategoriesController < ApplicationController
   def destroy
     @post_category.destroy
     respond_to do |format|
-      format.html { redirect_to [:admin_post_categories, @post_categories],
-        notice: 'Category Deleted.'}
+      format.html { redirect_to [:admin_post_categories, @post_categories] }
       format.json { head :no_content }
     end
   end

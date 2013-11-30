@@ -6,8 +6,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.paginate page: params[:page],
       per_page: 12
-
-    
   end
 
   # GET /products/1
@@ -22,7 +20,6 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-  
   end
 
   # POST /products

@@ -1,4 +1,5 @@
 class ProductCategory < ActiveRecord::Base
-  belongs_to :products
+  has_many :products, :through => :product_categories
   
+  validates :name, presence: true, uniqueness: true
 end

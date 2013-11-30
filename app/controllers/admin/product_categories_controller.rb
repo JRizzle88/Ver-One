@@ -11,28 +11,25 @@ class Admin::ProductCategoriesController < ApplicationController
   # GET /product_categories
   # GET /product_categories.json
   def index
+    @product_category = ProductCategory.new
     @product_categories = ProductCategory.all.paginate page: params[:page],
       per_page: 10
-
-    @product_category = ProductCategory.new
   end
 
   # GET /product_categories/1
   # GET /product_categories/1.json
   def show
-    @product_categories = ProductCategory.find(params[:id])
+    
   end
 
   # GET /product_categories/new
   def new
     @product_category = ProductCategory.new
-
-    @product_categories = ProductCategory.all.paginate page: params[:page],
-      per_page: 10
   end
 
   # GET /product_categories/1/edit
   def edit
+    
   end
 
   # POST /product_categories
@@ -42,12 +39,13 @@ class Admin::ProductCategoriesController < ApplicationController
 
     respond_to do |format|
       if @product_category.save
-        format.html { redirect_to admin_product_categories_path(@product_categories), 
-          notice: 'Product category was successfully created.' }
+        format.html { redirect_to [:admin_product_categories, @product_categories], 
+          notice: 'Category successfully added.' }
         format.json { render action: 'show', 
           status: :created, location: @product_category }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to [:admin_product_categories, @product_categories],
+          alert: 'Category already exists.' }
         format.json { render json: @product_category.errors, 
           status: :unprocessable_entity }
       end
@@ -59,8 +57,8 @@ class Admin::ProductCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @product_category.update(product_category_params)
-        format.html { redirect_to admin_product_category_path(@product_category), 
-          notice: 'Product category was successfully updated.' }
+        format.html { redirect_to [:admin_product_categories, @product_categories], 
+          notice: 'Category successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,7 +73,8 @@ class Admin::ProductCategoriesController < ApplicationController
   def destroy
     @product_category.destroy
     respond_to do |format|
-      format.html { redirect_to [:admin_product_categories, @product_categories] }
+      format.html { redirect_to [:admin_product_categories, @product_categories],
+        notice: 'Category deleted.' }
       format.json { head :no_content }
     end
   end

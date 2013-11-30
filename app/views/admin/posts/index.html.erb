@@ -5,6 +5,7 @@
     <tr>
       <th></th>
       <th width="400">Title</th>
+      <th width="150">Category</th>
       <th width="125">Image</th>
       <th>Updated</th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= link_to 'Preview', post, :class => 'button [ tiny success ]' %></td>
         <td><%= link_to post.title, edit_admin_post_path(post) %></td>
+        <td><%= post.post_category_id %></td>
         <td class="th custom-th-blog"><%= image_tag(post.image_url) %></td>
         <td><%= post.updated_at %></td>
         <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %></td>

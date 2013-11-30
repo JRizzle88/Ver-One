@@ -1,12 +1,14 @@
 class Post < ActiveRecord::Base
-attr_accessible :image_posts
   has_many :comments, :dependent => :destroy
   has_many :image_posts
-  belongs_to :post_category
+  has_and_belongs_to_many :post_categories
+
+#post image // paperclip
   has_attached_file :image_posts,
     :styles => { :post_page => "550x550>", :post_image => "220x220>", :post_thumb => "75x75>" }
     #:path => ":rails_root/assets/images/posts/:style/:basename.:extension"
 
+#post validations
   validates :title, presence: true
   validates :title, uniqueness: true
   validates :image_url, allow_blank: true, format: {
