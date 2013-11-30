@@ -9,8 +9,9 @@
   <div class="form-actions">
     <div class="text-center">
     <%= link_to 'Preview', @product, :class => 'button [ tiny success ]' %> | <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %>
-    <br>
+    <div class="create_product_button">
     <%= f.button :submit %> 
+	</div>
     </div>
     </div>
   </div>
@@ -20,12 +21,25 @@
     <%= f.text_area :description, class: 'tinymce', rows: 100, cols: 600 %>
   </div>
   <div class="large-3 columns">
+	
       <%= f.input :image_url %>
+
       <%= simple_form_for @product, :html => { :multipart => true } do |form| %>
         <%= form.submit 'Upload' %><%= form.file_field :image %>
       <% end %>
+
       <%= f.label :product_category_id, 'Category' %>
       <%= f.collection_select :product_category_id, ProductCategory.all, :id, :name %>
+
+	<%= simple_form_for(@product_category) do |f| %>
+	  <%= f.error_notification %>
+	  
+	    <%= f.input :name %>
+	<div class="text-center">
+	    <%= f.button :submit, 'Add Category' %>
+	</div>
+	<% end %>
+	
     </div>
 <% end %>
 </div>

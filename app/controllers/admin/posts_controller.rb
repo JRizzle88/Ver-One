@@ -8,7 +8,8 @@ class Admin::PostsController < ApplicationController
   end
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_post_category, only: [:show, :edit, :update, :destroy]
+  
   def index
     @posts = Post.all.paginate page: params[:page],
       per_page: 10,
@@ -16,7 +17,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def show
-    #@post filter
+    
   end
 
   def new
@@ -27,9 +28,18 @@ class Admin::PostsController < ApplicationController
   end
 
   def create
+    
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
+          params[:post_category_id].each do |post_category|
+             post_category = PostCategory.new(:post_category_id => @Post.post_category_id)
+             if post_category.valid?
+               post_category.save
+             else
+               @errors += post_category.errors
+             end
+          end
         format.html { redirect_to [:admin_posts, @posts],
           notice: 'Post was successfully created.' }
         format.json { render action: 'show', 
@@ -70,6 +80,10 @@ class Admin::PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def set_post_category
+    @post_category = PostCategory.new
+  end
+  
   def post_params
      params.require(:post).permit(:title, :content, :image_url)
   end

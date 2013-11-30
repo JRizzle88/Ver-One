@@ -8,7 +8,7 @@ class Admin::ProductsController < ApplicationController
   end
   
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_product_category, only: [:show, :edit, :update, :destroy]
   # GET /products
   # GET /products.json
   def index
@@ -82,6 +82,10 @@ class Admin::ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def set_product_category
+      @product_category = ProductCategory.new
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)

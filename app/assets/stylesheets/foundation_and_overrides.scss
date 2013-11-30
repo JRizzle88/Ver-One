@@ -1,7 +1,7 @@
 //
 // Foundation Variables
 //
-.rowfull{width: 75%; margin-left: auto; margin-right: auto;}
+.rowfull{width: 88.5%; margin-left: 12.5%; margin-right: auto;}
 header .brand {position: relative; margin-left: 35px; z-index: 1; font-size: 45px;}
 header .brand a { }
 header {background-color: #3B3E40;}
@@ -78,6 +78,19 @@ $em-base: 16px !default;
 //   @return $pxWidth / $rem-base * 1rem;
 // }
 
+// Media Queries
+
+// $small-screen: 768px;
+// $medium-screen: 1280px;
+// $large-screen: 1440px;
+
+// $screen: "only screen";
+// $small: "only screen and (min-width: #{$small-screen})";
+// $medium: "only screen and (min-width: #{$medium-screen})";
+// $large: "only screen and (min-width: #{$large-screen})";
+// $landscape: "only screen and (orientation: landscape)";
+// $portrait: "only screen and (orientation: portrait)";
+
 // Change whether or not you include browser prefixes
 // $experimental: true;
 
@@ -87,8 +100,8 @@ $default-float: left;
 
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
+$body-font-family: 'Roboto', sans-serif;
+$body-font-weight: normal;
 // $body-font-style: normal;
 
 // Font-smoothing
@@ -145,20 +158,9 @@ $shiny-edge-color: rgba(#fff, .7);
 // $include-html-magellan-classes: $include-html-classes;
 // $include-html-tooltip-classes: $include-html-classes;
 
-// Media Queries
-
-// $small-screen: 768px;
-// $medium-screen: 1280px;
-// $large-screen: 1440px;
-
-// $screen: "only screen";
-// $small: "only screen and (min-width: #{$small-screen})";
-// $medium: "only screen and (min-width: #{$medium-screen})";
-// $large: "only screen and (min-width: #{$large-screen})";
-// $landscape: "only screen and (orientation: landscape)";
-// $portrait: "only screen and (orientation: portrait)";
-
+//
 //// Cursors
+//
 
 //Custom use example -> $cursor-default-value: url(http://cursors-site.net/path/to/custom/cursor/default.cur),progress;
 
@@ -194,7 +196,7 @@ $shiny-edge-color: rgba(#fff, .7);
 
 // Control header font styles
 
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: 'Roboto', sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;

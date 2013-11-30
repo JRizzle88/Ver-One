@@ -7,7 +7,9 @@
     <div class="form-actions">
     <div class="text-center">
     <%= link_to 'Preview', @post, :class => 'button [ tiny success ]' %> | <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %>
+	<div class="create_product_button">
     <%= f.button :submit %> 
+	</div>
     </div>
   </div>
 
@@ -21,7 +23,16 @@
         <%= form.submit 'Upload' %><%= form.file_field :image %>
       <% end %>
       <%= f.label :post_category_id, 'Category' %>
+		<%= f.select :post_category_id, PostCategory.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
       <%= f.collection_select :post_category_id, PostCategory.all, :id, :name %>
+
+	<%= simple_form_for(@post_category) do |f| %>
+	  <%= f.error_notification %>
+	    <%= f.input :name %>
+	<div class="text-center">
+	    <%= f.button :submit, 'Add Category' %>
+	</div>
+	<% end %>
     </div>
   </div>
   
