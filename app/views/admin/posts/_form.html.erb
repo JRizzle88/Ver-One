@@ -6,13 +6,13 @@
       <%= f.input :title, placeholder: 'Post Title' %>
     </div>
     <div class="large-3 columns">
-    <div class="text-center">
-    <%= link_to 'Preview', @post, :class => 'button [ tiny success ]' %> | <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %>
-	<div class="create_product_button">
-    <%= f.button :submit %> 
-	</div>
+      <div class="text-center">
+        <%= link_to 'Preview', @post, :class => 'button [ tiny success ]' %> | <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %>
+	      <div class="create_product_button">
+          <%= f.button :submit %> 
+	      </div>
+      </div>
     </div>
-  </div>
   <div class="large-9 columns">
     <%= f.text_area :content, :input_html => { rows: 600, cols: 600 } %>
   </div>
