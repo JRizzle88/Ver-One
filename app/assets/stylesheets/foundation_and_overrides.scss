@@ -21,9 +21,8 @@ nav.top-bar{background-color: #3B3E40 !important;}
 iframe#product_description_ifr{min-height: 350px !important; }
 iframe#post_content_ifr{min-height: 350px !important; }
 p.notice{color: white !important; font-weight: normal !important; background-color: #43AC6A;padding-left: 10px !important;}
-
-
-
+.no-margin{margin: 0px !important;}
+.post-image-preview{padding-bottom: 15px;}
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 $base-font-size: 100% !default;

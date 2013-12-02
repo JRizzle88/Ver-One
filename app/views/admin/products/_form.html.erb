@@ -21,7 +21,9 @@
     <%= f.text_area :description, class: 'tinymce', rows: 100, cols: 600 %>
   </div>
   <div class="large-3 columns">
-	
+	   <div class="post-image-preview text-center">
+    <%= image_tag(@product.image_url) %>
+    </div>
       <%= f.input :image_url %>
 
       <%= simple_form_for @product, :html => { :multipart => true } do |form| %>

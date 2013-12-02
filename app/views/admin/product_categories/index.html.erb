@@ -19,7 +19,7 @@
     <% @product_categories.each do |product_category| %>
       <tr>
         <td><%= product_category.name %></td>
-        <td><%= link_to 'Destroy', admin_product_category_path(product_category), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %></td>
+        <td><%= link_to 'Destroy', admin_product_category_path(product_category), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ] no-margin' %></td>
       </tr>
     <% end %>
   </tbody>

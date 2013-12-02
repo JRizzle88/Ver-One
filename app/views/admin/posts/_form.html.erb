@@ -1,10 +1,11 @@
 <div class="large-12 columns">
+
 <%= simple_form_for [:admin, @post] do |f| %>
   <div class="form-inputs">
     <div class="large-9 columns">
       <%= f.input :title, placeholder: 'Post Title' %>
     </div>
-    <div class="form-actions">
+    <div class="large-3 columns">
     <div class="text-center">
     <%= link_to 'Preview', @post, :class => 'button [ tiny success ]' %> | <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %>
 	<div class="create_product_button">
@@ -12,12 +13,13 @@
 	</div>
     </div>
   </div>
-
-
   <div class="large-9 columns">
-    <%= f.text_area :content, class: 'tinymce', rows: 100, cols: 600 %>
+    <%= f.text_area :content, :input_html => { rows: 600, cols: 600 } %>
   </div>
   <div class="large-3 columns">
+      <div class="post-image-preview">
+    <%= image_tag(@post.image_url) %>
+    </div>
       <%= f.input :image_url %>
       <%= simple_form_for @post, :html => { :multipart => true } do |form| %>
         <%= form.submit 'Upload' %><%= form.file_field :image %>
@@ -43,5 +45,3 @@
         
       <% end %>
 </div>
-
-

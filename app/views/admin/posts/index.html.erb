@@ -15,12 +15,12 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to 'Preview', post, :class => 'button [ tiny success ]' %></td>
+        <td><%= link_to 'Preview', post, :class => 'button [ tiny success ] no-margin' %></td>
         <td><%= link_to post.title, edit_admin_post_path(post) %></td>
         <td><%= post.post_category_id %></td>
         <td class="th custom-th-blog"><%= image_tag(post.image_url) %></td>
         <td><%= post.updated_at %></td>
-        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ]' %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ] no-margin' %></td>
       </tr>
     <% end %>
   </tbody>

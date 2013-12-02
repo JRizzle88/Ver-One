@@ -1,5 +1,5 @@
 <%= simple_form_for(@post_category) do |f| %>
   <%= f.error_notification %>
-    <%= f.input :name %>
+    <%= f.input :name, label: '', placeholder: 'Name' %>
     <%= f.button :submit, 'Add Category' %>
 <% end %>
