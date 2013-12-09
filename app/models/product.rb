@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   has_many :orders, :through => :line_items
   has_many :image_products
   has_and_belongs_to_many :product_categories
+  has_and_belongs_to_many :studios
   
 
 #product image // paperclip

@@ -20,7 +20,7 @@
         <td><%= post.post_category_id %></td>
         <td class="th custom-th-blog"><%= image_tag(post.image_url) %></td>
         <td><%= post.updated_at %></td>
-        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ] no-margin' %></td>
+        <td><%= link_to 'X', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ] no-margin' %></td>
       </tr>
     <% end %>
   </tbody>

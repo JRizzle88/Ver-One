@@ -18,7 +18,7 @@
     <% @post_categories.each do |post_category| %>
       <tr>
         <td style="font-size: 11px;"><%= post_category.name %></td>
-        <td><%= link_to 'Destroy', admin_post_category_path(post_category), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ] no-margin' %></td>
+        <td><%= link_to 'X', admin_post_category_path(post_category), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button [ tiny alert ] no-margin' %></td>
       </tr>
     <% end %>
   </tbody>

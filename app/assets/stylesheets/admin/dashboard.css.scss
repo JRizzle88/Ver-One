@@ -12,34 +12,34 @@
  *= require foundation_and_overrides
  *= require_tree .
 */
-.side-nav { 
+.dashboard.side-nav { 
   width: 12.5%;
   background-color: #3D3D3D;
   box-shadow: #3B3E40 1px 0px 2px;
 }
 
-.side-nav li { 
+.dashboard.side-nav li { 
   list-style-type:none;
 }
-.side-nav li a { 
+.dashboard.side-nav li a { 
   font-size: 15px; 
   font-weight: 400;
   color: white; 
   margin-left: 0;
 }
-.side-nav a.group-header {
+.dashboard.side-nav a.group-header {
   background-color: #E02222;
   padding: 4px 0px 4px 21%;
   border-bottom: 1px solid rgba(245,245,245,0.5);
 }
-.side-nav ul.dropdown{
+.dashboard.dashboard-side-nav ul.dropdown{
   padding: 5px 0px 5px 0px; 
   margin-left: 0px;
 }
-.side-nav ul li{
+.dashboard.side-nav ul li{
   margin-bottom:0px;
 }
-.side-nav ul li a { 
+.dashboard.side-nav ul li a { 
   font-size: 12px; 
   font-weight: normal;
   transition: color 0.1s ease;
@@ -47,7 +47,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.side-nav ul li a:hover { 
+.dashboard.side-nav ul li a:hover { 
   background-color: rgba(245,245,245,0.1);
 }
 

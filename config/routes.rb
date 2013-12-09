@@ -1,5 +1,7 @@
 Verone::Application.routes.draw do
 
+  resources :colors
+
   devise_for :users, :controllers => {:registrations => "registrations"}
   devise_for :admins
 
@@ -13,6 +15,7 @@ namespace :admin do
   resources :products
   resources :users
   resources :orders
+  resources :studios
   resources :post_categories
   resources :product_categories
 end
@@ -27,6 +30,7 @@ end
   resources :line_items
   resources :orders
   resources :carts
+  resources :studios
   resources :post_categories
   resources :product_categories
   resources :list_items  

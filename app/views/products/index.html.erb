@@ -60,10 +60,11 @@
               <% product = Product.random  %>
            		  <%= image_tag(product.image_url) %> 
                 <div class="text-center">
-           		  <h5><%= link_to product.title, product %></h5>
-                <h6 class="subheader"><%= number_to_currency(product.price) %></h6>
+           		  <h6><%= link_to product.title, product %></h6>
+                <h5 class="subheader"><%= number_to_currency(product.price) %></h5>
                 </div>
-           		  <%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => 'button [tiny small large]' %>             
+                <%= button_to 'Customize', new_studio_path, method: :get, :class => 'button [tiny small large] middle pos-10-top' %>
+           		  <%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => 'button [tiny small large] middle' %>             
           </div>
 
         </div>
@@ -80,10 +81,11 @@
              <%= image_tag(product.image_url) %>
               <div class="panel" style="padding-top: 5px;">
               <div class="text-center">
-                <h5><%= link_to product.title, product %></h5>
-                <h6 class="subheader"><%= number_to_currency(product.price) %></h6>
-              </div>              
-                  <%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => 'button [tiny small large]' %>
+                <h6><%= link_to product.title, product %></h6>
+                <h5 class="subheader"><%= number_to_currency(product.price) %></h5>
+              </div>
+                  <%= button_to 'Customize', new_studio_path, method: :get, :class => 'button [tiny small large] middle pos-10-top' %>              
+                  <%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => 'button [tiny small large] middle' %>
               </div>
             </div>
             <% end %>
