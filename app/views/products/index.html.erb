@@ -79,7 +79,7 @@
  			<% slice.each do |product| %>
             <div class="small-4 columns">
              <%= image_tag(product.image_url) %>
-              <div class="panel" style="padding-top: 5px;">
+              <div class="panel product" style="padding-top: 5px;">
               <div class="text-center">
                 <h6><%= link_to product.title, product %></h6>
                 <h5 class="subheader"><%= number_to_currency(product.price) %></h5>

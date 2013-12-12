@@ -20,8 +20,9 @@
     <!-- Main Blog Content -->
     <div class="large-9 columns" role="content">
  
-      <article>
-        <% @posts.each do |post| %>
+      
+      <% @posts.each do |post| %>
+        <article>
           <div class="row">
             <div class="large-12 columns">
               <%= image_tag(post.image_url) %>
@@ -29,8 +30,8 @@
             </div>
           </div>
           <%= post.content %>
-        <% end %>
-      </article>
+        </article>
+      <% end %>
       <hr />
       <%= will_paginate @posts, :class => 'pagination-centered' %>
     </div>

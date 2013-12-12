@@ -24,6 +24,19 @@ p.notice{color: white !important; font-weight: normal !important; background-col
 .no-margin{margin: 0px !important;}
 .pos-10-top{top: 10px !important;}
 .post-image-preview{padding-bottom: 15px;}
+.panel.product{background: none; border:none;}
+.small-4.columns{border-radius: 1px; transition: linear 0.3s; -webkit-transition: linear 0.3s; -moz-transition: linear 0.3s;}
+.small-4.columns:hover{-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);box-shadow: 0 0 5px rgba(0,0,0,0.5); transition: linear 0.3s; -webkit-transition: linear 0.3s; -moz-transition: linear 0.3s;}
+article{padding-top: 60px;}
+
+
+
+
+
+
+
+
+
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 $base-font-size: 100% !default;
