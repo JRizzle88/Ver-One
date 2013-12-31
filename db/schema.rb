@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20131209032651) do
   create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "colors", force: true do |t|
@@ -86,13 +85,13 @@ ActiveRecord::Schema.define(version: 20131209032651) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price",               precision: 8, scale: 2
+    t.decimal  "price",                       precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string   "image_products_file_name"
+    t.string   "image_products_content_type"
+    t.integer  "image_products_file_size"
+    t.datetime "image_products_updated_at"
     t.integer  "product_category_id"
   end
 
