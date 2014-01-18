@@ -28,13 +28,7 @@
 		<%= f.select :post_category_id, PostCategory.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
       <%= f.collection_select :post_category_id, PostCategory.all, :id, :name %>
 
-	<%= simple_form_for(@post_category) do |f| %>
-	  <%= f.error_notification %>
-	    <%= f.input :name %>
-	<div class="text-center">
-	    <%= f.button :submit, 'Add Category' %>
-	</div>
-	<% end %>
+	
     </div>
   </div>
   

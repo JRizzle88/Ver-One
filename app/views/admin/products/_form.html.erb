@@ -33,14 +33,9 @@
       <%= f.label :product_category_id, 'Category' %>
       <%= f.collection_select :product_category_id, ProductCategory.all, :id, :name %>
 
-	<%= simple_form_for(@product_category) do |f| %>
-	  <%= f.error_notification %>
 	  
-	    <%= f.input :name %>
-	<div class="text-center">
-	    <%= f.button :submit, 'Add Category' %>
-	</div>
-	<% end %>
+	 
+	
 	
     </div>
 <% end %>
