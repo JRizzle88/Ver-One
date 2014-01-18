@@ -12,6 +12,8 @@
  *= require foundation_and_overrides
  *= require_tree .
 */
+
+.dashboardMain.large-12.columns{min-height: 600px;}
 .dashboard.side-nav { 
   width: 12.5%;
   background-color: #3D3D3D;
@@ -50,4 +52,5 @@
 .dashboard.side-nav ul li a:hover { 
   background-color: rgba(245,245,245,0.1);
 }
+
 
