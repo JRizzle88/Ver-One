@@ -41,25 +41,7 @@
  
     <!-- Sidebar -->
  
-    <aside class="large-3 columns">
- 
-      <h5>Categories</h5>
-      <ul class="side-nav">
-        <li><a href="#">News</a></li>
-        <li><a href="#">Code</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Fun</a></li>
-        <li><a href="#">Weasels</a></li>
-      </ul>
- 
-      <div class="panel">
-        <h5>Featured Posts</h5>
-        <% @posts.each do |post| %>
-          <h5><%= link_to post.title, post %></h5>
-        <% end %>
-      </div>
- 
-    </aside>
+    <%= render 'layouts/sidebar' %>
  
     <!-- End Sidebar -->
   </div>

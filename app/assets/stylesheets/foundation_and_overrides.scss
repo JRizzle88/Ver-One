@@ -1,15 +1,16 @@
 //
 // Foundation Variables
 //
+.row{max-width: 75em !important;}
 .rowfull{width: 88.5%; margin-left: 12.5%; margin-right: auto;}
 header .brand {position: relative; margin-left: 35px; z-index: 1; font-size: 45px;}
 header .brand a { }
-header {background-color: #3B3E40;}
-
+header {background-color: #CCCCCC;}
+header .logo {float: left;}
 .top-bar-section ul.left { margin-left: 100px;}
-.top-bar, .top-bar ul a{background-color: #3B3E40 !important;}
-nav.top-bar{background-color: #3B3E40 !important;}
-.top-bar ul li a:hover{color: #1382CA !important; transition: 0.1s ease;}
+.top-bar, .top-bar ul a{background-color: #CCCCCC !important; text-shadow: 0px 1px 1px gray;}
+nav.top-bar{background-color: #CCCCCC !important;}
+.top-bar ul li a:hover{background-color: gray !important; transition: 0.3s ease;}
 .large-4.small-6.columns{padding-left: 15px; padding-right: 19px;}
 .clearfix:after { content: "\00A0"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;width:0;font-size: 0px}.clearfix{ display: inline-block;}html[xmlns] .clearfix { display: block;}* html .clearfix{ height: 1%;}.clearfix {display: block}
 .small-4 img{width: 225px;}
@@ -26,14 +27,40 @@ p.notice{color: white !important; font-weight: normal !important; background-col
 .pos-10-top{top: 10px !important;}
 .post-image-preview{padding-bottom: 15px;}
 .panel.product{background: none; border:none;}
-.small-4.columns{padding-top: 15px; border-radius: 1px; transition: linear 0.3s; -webkit-transition: linear 0.3s; -moz-transition: linear 0.3s;}
+.small-4.columns{border-radius: 1px; transition: linear 0.3s; -webkit-transition: linear 0.3s; -moz-transition: linear 0.3s;}
 .small-4.columns:hover{-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);box-shadow: 0 0 5px rgba(0,0,0,0.5); transition: linear 0.3s; -webkit-transition: linear 0.3s; -moz-transition: linear 0.3s;}
-article{padding-top: 60px;}
+article{margin-bottom: 30px;}
 
+.inside-mega-menu li {
+    float: none !important;
+}
 
+.top-bar-section .dropdown{
+  background-color: #cccccc !important;
+}
 
+// USERS //
+.account-panel {
+  padding: 15px;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  background-color: #EEEEEE;
+}
 
+.account-panel h3 {
+  color: black;
+  padding: 8px 0 8px 10px;
+  margin: 0 0 10px 0;
+  text-shadow: 0px 1px 1px gray;
+  border-bottom: 1px solid black;
+}
 
+@media only screen and (min-width: 641px) {
+  .dropdown-wrapper {
+    background-color: #333333 !important;
+    padding: 10px 0;
+  }
+}
 
 
 

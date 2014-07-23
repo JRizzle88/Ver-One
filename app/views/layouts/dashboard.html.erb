@@ -18,43 +18,24 @@
   </head>
   <body class="<%= controller_name %> <%= action_name %>" style="background-color: #F5F5F5;">
     <div id="container" class="container">
-      <header>
-		<%= render 'layouts/dashboardnavigation' %>
-	  </header>
-	<div id="cart">
-		
-	</div>
-    <div id="main" role="main">
-    
-    <%= render 'layouts/dashboard_leftnavigation' %>
-    
-    <div class="rowfull">
-    <div class="dashboardMain large-12 columns">
-      <%= yield %>
-    </div>
-      </div>
-	</div>
-  <footer>
-        <div class="large-12 columns">
-      <hr />
-      <div class="row">
-        <div class="large-6 columns">
-          <p>© Copyright 2013</p>
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-      </footer>
 
+      <header>
+		    <%= render 'layouts/dashboardnavigation' %>
+	    </header>
+
+	    <div id="cart">
+		
+	    </div>
+
+      <div id="main" role="main">   
+        <%= render 'layouts/dashboard_leftnavigation' %> 
+        <div class="rowfull">
+          <div class="large-12 columns">
+            <%= yield %>
+          </div>
+        </div>
+  	  </div>
 
     </div> <!--! end of #container -->
-
   </body>
 </html>

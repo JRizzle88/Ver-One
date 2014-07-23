@@ -13,7 +13,10 @@
  *= require_tree .
 */
 
-.dashboardMain.large-12.columns{min-height: 600px;}
+.dashboard .top-bar-section{
+  padding: 0px 50px;
+}
+
 .dashboard.side-nav { 
   width: 12.5%;
   background-color: #3D3D3D;
@@ -23,24 +26,29 @@
 .dashboard.side-nav li { 
   list-style-type:none;
 }
+
 .dashboard.side-nav li a { 
   font-size: 15px; 
   font-weight: 400;
   color: white; 
   margin-left: 0;
 }
+
 .dashboard.side-nav a.group-header {
   background-color: #E02222;
   padding: 4px 0px 4px 21%;
   border-bottom: 1px solid rgba(245,245,245,0.5);
 }
+
 .dashboard.dashboard-side-nav ul.dropdown{
   padding: 5px 0px 5px 0px; 
   margin-left: 0px;
 }
+
 .dashboard.side-nav ul li{
   margin-bottom:0px;
 }
+
 .dashboard.side-nav ul li a { 
   font-size: 12px; 
   font-weight: normal;
@@ -49,8 +57,8 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
 .dashboard.side-nav ul li a:hover { 
   background-color: rgba(245,245,245,0.1);
 }
-
 

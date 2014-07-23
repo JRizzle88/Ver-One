@@ -26,7 +26,7 @@
       <% end %>
       <%= f.label :post_category_id, 'Category' %>
 		<%= f.select :post_category_id, PostCategory.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
-      <%= f.collection_select :post_category_id, PostCategory.all, :id, :name %>
+      
 
 	
     </div>

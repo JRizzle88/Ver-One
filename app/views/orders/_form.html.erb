@@ -1,5 +1,5 @@
-<%= render @cart %>
 
+<div class="large-6 columns">
 <%= simple_form_for(@order) do |f| %>
   <%= f.error_notification %>
 
@@ -26,7 +26,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit 'Place Order' %>
+    <%= f.submit 'Place Order', :class => 'button [ large success ]' %>
   </div>
 <% end %>
+</div>
 
+<div class="large-6 columns">
+<%= render @cart %>
+</div>

@@ -1,16 +1,42 @@
-<div id="formwrapper">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+
+<div class="row">
+<div class="account-panel">
+<h2>Edit Your Profile</h2>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
+  <div class="large-6 columns">
+  <h3>General Information</h3>
   <%= f.input :name, :autofocus => true %>
   <%= f.input :email, :required => true %>
+  <%= f.input :company %>
+  <%= f.input :position %>
+  <%= f.input :work_address %>
+  <%= f.input :phone_number %>
+  </div>
+  <div class="large-6 columns">
+  <h3>Personal Interests</h3>
+  <%= f.input :favorite_color %>
+  <%= f.input :favorite_sport %>
+  <%= f.input :favorite_websites %>
+  </div>
+<hr>
+</div>
+</div>
+<div class="row">
+
+  <div class="large-6 columns">
+  <h3>Password Reset</h3>
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+  </div>
+
+  <div class="large-12 columns">
   <%= f.button :submit, 'Update', :class => 'btn-primary' %>
 <% end %>
-<h3>Cancel my account</h3>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-<%= link_to "Back", :back %>
+  </div>
+
 </div>

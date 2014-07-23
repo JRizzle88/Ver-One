@@ -17,4 +17,22 @@
 //= require_tree .
 //= require tinymce-jquery
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+	$(document).foundation(); 
+
+	$(".megamenu").mouseenter(function(){
+
+	  if($(window).width()>641){
+	  	var menuWidth = $(window).width() / 1.5;
+	  	var offsetLeft = $(window).width() / 5;
+	    $(".dropdown-wrapper").offset({left: offsetLeft});
+	    $(".dropdown-wrapper").css("width", menuWidth);
+	    $(".dropdown-wrapper").css("margin", auto);
+	  }else{
+	    $(".dropdown-wrapper").css("width", auto);
+	  }
+	  
+	});
+
+});
+

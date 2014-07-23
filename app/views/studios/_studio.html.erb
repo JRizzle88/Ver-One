@@ -7,7 +7,7 @@
 		<h6>Color Swatch</h6>
 			<ul class="inline-list">
 				<% @colors.each do |color| %>
-					<li><a style="background-color:<%= color.hexcode %>;" title="<%= color.name %>"></a></li>
+					<li><a id="studio-tcolor" name="studio-tcolor" style="background-color:<%= color.hexcode %>;" title="<%= color.name %>"></a></li>
 				<% end %>
 			</ul>
 		</div>
@@ -37,9 +37,11 @@
 
 <!-- Middle Area -->
 	<div class="large-6 columns">
-		<div class="row" style="background: url(/assets/studio-product-image.jpg); height:500px;">
 		<H6>Product Name & Size</H6>
-		</div>
+		<canvas width="565" height="500" id="studio-canvas" style="background: url(/assets/studio-product-image.jpg) no-repeat;">
+			Your browser does not support the canvas element.
+		</canvas>
+		
 	</div>
 <!-- End Middle Area -->
 

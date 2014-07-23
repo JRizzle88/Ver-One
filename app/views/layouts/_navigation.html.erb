@@ -1,5 +1,6 @@
 <div class="row">
-<%= link_to "Verone", root_path, :class => 'brand' %>
+
+<!-- <%= link_to "Verone", root_path, :class => 'brand' %> -->
 
 <nav class="top-bar">
   <ul class="title-area">
@@ -9,11 +10,65 @@
   </ul>
 
   <section class="top-bar-section fullwidth">
+  	<div class="logo">
+		<a href="/">
+			<img src="/assets/verone-logo-new-45.png" />
+		</a>
+	</div>
     <!-- Left Nav Section -->
     <ul class="left">
       <li class="active"><a href="/">Home</a></li>
       <li><a href="#">About</a></li>
-	  <li><a href="/products/">Products</a></li>
+	  
+        <li class="has-dropdown megamenu not-click"><a href="#">Mega Menu</a>
+          <ul class="dropdown dropdown-wrapper">
+            <li>
+              <div>
+                <div class="small-6 columns">
+                  <ul>
+                    <li><h3>Heading 1</h3></li>
+                    <li class="active"><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                  </ul>
+                </div>
+                <div class="small-6 columns">
+                  <ul>
+                    <li><h3>Heading 2</h3></li>
+                    <li class="active"><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown megamenu not-click"><a href="#">Mega Menu 2</a>
+          <ul class="dropdown dropdown-wrapper">
+            <li>
+              <div>
+                <div class="small-6 columns">
+                  <ul>
+                    <li><h3>Heading 1</h3></li>
+                    <li class="active"><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                  </ul>
+                </div>
+                <div class="small-6 columns">
+                  <ul>
+                    <li><h3>Heading 2</h3></li>
+                    <li class="active"><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
 	  <li><a href="/posts/">Blog</a></li>
     </ul>
 

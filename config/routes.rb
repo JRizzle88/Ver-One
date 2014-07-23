@@ -11,7 +11,6 @@ namespace :admin do
   get 'dashboard' => 'dashboard#index'
   root :to => "dashboard#index"
   resources :admin
-  resources :colors
   resources :posts
   resources :products
   resources :users

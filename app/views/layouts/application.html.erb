@@ -6,6 +6,10 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Verone" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <!-- BX SLIDER -->
+    <%= javascript_include_tag 'jquery.bxslider.min' %>
+    <%= stylesheet_link_tag 'jquery.bxslider'%>
+
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
     <%= tinymce_assets %>
@@ -14,41 +18,27 @@
    <![endif]--> 
    <!-- <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> -->
+
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <div id="container" class="container">
+
       <header>
         <%= render 'layouts/navigation' %>
       </header>
-	  <div id="cart">
-		
-	  </div>
+
+  	  <div id="cart">
+  	  </div>
+
       <div id="main" role="main">
-      <div class="row">
-      <div class="large-12 columns">
-      <%= render 'layouts/messages' %>
-        <%= yield %>
-      </div>
-      </div>
-		</div>
+        <%= render 'layouts/messages' %>
+          <%= yield %>
+  		</div>
+
       <footer>
-        <div class="large-12 columns">
-      <hr />
-      <div class="row">
-        <div class="large-6 columns">
-          <p>© Copyright 2013</p>
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        <%= render 'layouts/footer' %>
       </footer>
+
     </div> <!--! end of #container -->
   </body>
 </html>
